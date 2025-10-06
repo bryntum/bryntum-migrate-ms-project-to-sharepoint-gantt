@@ -1,0 +1,88 @@
+{
+  "success": true,
+  "tasks": {
+    "rows": [
+      {
+        "id": 0,
+        "name": "Design website",
+        "startDate": "2025-11-11",
+        "duration": 2,
+        "percentDone": 75,
+        "expanded": true,
+        "note": "Use Figma",
+        "bucket": "Bucket 1",
+        "priority": "Medium",
+        "children": []
+      },
+      {
+        "id": 1,
+        "name": "Build",
+        "startDate": "2025-11-14",
+        "duration": 7,
+        "percentDone": 0,
+        "expanded": true,
+        "priority": "Medium",
+        "children": [
+          {
+            "id": 2,
+            "name": "Make web app",
+            "startDate": "2025-11-14",
+            "duration": 4,
+            "percentDone": 0,
+            "bucket": "Bucket 1",
+            "priority": "Medium",
+            "children": []
+          },
+          {
+            "id": 3,
+            "name": "Make mobile app",
+            "startDate": "2025-11-19",
+            "duration": 2,
+            "percentDone": 0,
+            "bucket": "Bucket 1",
+            "priority": "Medium",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Test",
+        "startDate": "2025-11-24",
+        "duration": 1,
+        "percentDone": 0,
+        "expanded": true,
+        "note": "Unit and integration tests",
+        "priority": "Important",
+        "children": [
+          {
+            "id": 5,
+            "name": "Integration test",
+            "startDate": "2025-11-24",
+            "duration": 1,
+            "percentDone": 0,
+            "bucket": "Bucket 1",
+            "priority": "Medium",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "rows": [
+      {
+        "id": 0,
+        "fromTask": 0,
+        "toTask": 1,
+        "type": 2
+      },
+      {
+        "id": 1,
+        "fromTask": 1,
+        "toTask": 4,
+        "type": 2
+      }
+    ]
+  }
+}
