@@ -4,6 +4,9 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import xlsx from "xlsx";
 
+const excelfilePath = "./launch-website.xlsx";
+const projectName = "Launch website";
+
 function convertToDate(excelDate) {
   // Convert Excel serial date to JavaScript Date
   // Excel dates are days since 1/1/1900
@@ -83,7 +86,7 @@ function createBryntumTasksRows(data) {
     // Skip empty rows
     if (!row["__EMPTY"]) continue;
 
-    const outlineNumber = row["Launch website"];
+    const outlineNumber = row[projectName];
     const name = row["__EMPTY"];
     const assignedTo = row["__EMPTY_1"] || undefined;
     const startDate = row["__EMPTY_2"] ? convertToDate(row["__EMPTY_2"]) : undefined;
@@ -147,7 +150,7 @@ function createBryntumTasksRows(data) {
   return { tree, rawDependencies, taskMap };
 }
 
-const workbook = xlsx.readFile("./launch-website.xlsx");
+const workbook = xlsx.readFile(excelfilePath);
 const sheetName = workbook.SheetNames[0]; 
 const worksheet = workbook.Sheets[sheetName];
 
